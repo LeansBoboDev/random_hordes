@@ -9,6 +9,7 @@ The mod is compatible with dedicated servers and singleplayer
 - Rare zombies chance to spawn
 - Chat message when horde starting (only dedicated servers)
 - Fully configurable
+- API Event for external mods: ``Events.OnRandomHordeSurvived``
 
 ### Questions
 - Can i use in my server? yes

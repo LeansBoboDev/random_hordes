@@ -1,6 +1,8 @@
 local debug = getSandboxOptions():getOptionByName(
 	"RandomHordes.ConsoleDebug"):getValue();
 
+LuaEventManager.AddEvent("OnRandomHordeSurvived")
+
 local tickBeforeNextZed = 10; -- Ticks to spawn a zed
 local actualTick = 0;         -- Actual server tick used with tickBeforeNextZed
 
@@ -168,6 +170,7 @@ local function CheckZombiesToSpawn()
 				SpawnZombieToPlayer(player);
 			else
 				outgoingHordes[player:getUsername()] = nil
+				triggerEvent("OnRandomHordeSurvived", player)
 			end
 		else
 			for playerUsername, zombiesRemaining in pairs(outgoingHordes) do
@@ -177,6 +180,7 @@ local function CheckZombiesToSpawn()
 						SpawnZombieToPlayer(player);
 					else
 						outgoingHordes[playerUsername] = nil;
+						triggerEvent("OnRandomHordeSurvived", player)
 					end
 				else
 					outgoingHordes[playerUsername] = nil;

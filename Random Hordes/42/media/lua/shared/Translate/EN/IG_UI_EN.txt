@@ -1,3 +1,0 @@
-IGUI_EN = {
-	IGUI_Horde_Incoming = "Horde Incoming!"
-}

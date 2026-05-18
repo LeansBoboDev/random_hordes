@@ -1,0 +1,24 @@
+{
+    "Sandbox_RandomHordes": "Random Hordes",
+
+    "Sandbox_RandomHordes_MinimumQuantity": "Minimum Horde Quantity",
+    "Sandbox_RandomHordes_MinimumQuantity_tooltip": "The minimal zombies that will spawn on hordes",
+
+    "Sandbox_RandomHordes_MaximumQuantity": "Maximum Horde Quantity",
+    "Sandbox_RandomHordes_MaximumQuantity_tooltip": "The max zombies that will spawn on hordes",
+
+    "Sandbox_RandomHordes_Frequency": "Horde Frequency",
+    "Sandbox_RandomHordes_Frequency_tooltip": "Chance every hour to be any horde, 1000 = 100%, 500 = 50%, 100 = 10%, 10 = 0.1%",
+
+    "Sandbox_RandomHordes_SpawnDistance": "Zombies Spawn Distance",
+    "Sandbox_RandomHordes_SpawnDistance_tooltip": "Zombie distance to the player for the zombie to spawn, 40 is a pretty good distance, bigger than that will try to spawn on unloaded chunks, and zombies may not spawn",
+
+    "Sandbox_RandomHordes_RareZombies": "Rare Zombies List",
+    "Sandbox_RandomHordes_RareZombies_tooltip": "A list of rare zombies that will spawn in the horde",
+
+    "Sandbox_RandomHordes_RareZombiesChance": "Rare Zombies Chance",
+    "Sandbox_RandomHordes_RareZombiesChance_tooltip": "The chance for a rare zombie to spawn in the horde for every zombie spawned, 1000 = 100%, 500 = 50%, 100 = 10%, 10 = 0.1%",
+
+    "Sandbox_RandomHordes_ConsoleDebug": "Debug",
+    "Sandbox_RandomHordes_ConsoleDebug_tooltip": "Enable console debugging"
+}

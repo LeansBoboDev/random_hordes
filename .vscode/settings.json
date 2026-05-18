@@ -1,0 +1,25 @@
+{
+    "Lua.diagnostics.globals": [
+        "getSandboxOptions",
+        "ZombRand",
+        "getWorld",
+        "SafeHouse",
+        "addZombiesInOutfit",
+        "addSound",
+        "getSoundManager",
+        "setGameSpeed",
+        "getOnlinePlayers",
+        "sendServerCommand",
+        "getPlayer",
+        "getPlayerFromUsername",
+        "Events",
+        "LuaEventManager",
+        "triggerEvent",
+        "isClient",
+        "isServer",
+        "Calendar",
+        "SimpleDateFormat",
+        "ISChat",
+        "getText"
+    ]
+}
