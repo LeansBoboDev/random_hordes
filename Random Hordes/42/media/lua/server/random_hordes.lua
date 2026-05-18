@@ -166,7 +166,9 @@ local function CheckZombiesToSpawn()
 
 		if RandomHordeIsSinglePlayer then
 			local player = getPlayer();
-			if (outgoingHordes[player:getUsername()] or 0) > 0 then
+			if player:isDead() then
+				outgoingHordes[player:getUsername()] = nil
+			elseif (outgoingHordes[player:getUsername()] or 0) > 0 then
 				SpawnZombieToPlayer(player);
 			else
 				outgoingHordes[player:getUsername()] = nil
@@ -175,15 +177,13 @@ local function CheckZombiesToSpawn()
 		else
 			for playerUsername, zombiesRemaining in pairs(outgoingHordes) do
 				local player = getPlayerFromUsername(playerUsername);
-				if player then
-					if (outgoingHordes[playerUsername] or 0) > 0 then
-						SpawnZombieToPlayer(player);
-					else
-						outgoingHordes[playerUsername] = nil;
-						triggerEvent("OnRandomHordeSurvived", player)
-					end
+				if not player or player:isDead() then
+					outgoingHordes[playerUsername] = nil;
+				elseif (outgoingHordes[playerUsername] or 0) > 0 then
+					SpawnZombieToPlayer(player);
 				else
 					outgoingHordes[playerUsername] = nil;
+					triggerEvent("OnRandomHordeSurvived", player)
 				end
 			end
 		end
