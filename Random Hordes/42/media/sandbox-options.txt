@@ -4,7 +4,7 @@ option RandomHordes.MinimumQuantity
 {
 	type = integer,
     min = 1,
-    max = 9999999,
+    max = 2147483647,
     default = 20,
 
     page = RandomHordes,
@@ -15,7 +15,7 @@ option RandomHordes.MaximumQuantity
 {
 	type = integer,
     min = 1,
-    max = 9999999,
+    max = 2147483647,
     default = 50,
 
     page = RandomHordes,
