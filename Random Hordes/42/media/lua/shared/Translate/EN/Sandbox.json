@@ -13,6 +13,9 @@
     "Sandbox_RandomHordes_SpawnDistance": "Zombies Spawn Distance",
     "Sandbox_RandomHordes_SpawnDistance_tooltip": "Zombie distance to the player for the zombie to spawn, 40 is a pretty good distance, bigger than that will try to spawn on unloaded chunks, and zombies may not spawn",
 
+    "Sandbox_RandomHordes_MinimumPlayerDistance": "Minimum Player Distance",
+    "Sandbox_RandomHordes_MinimumPlayerDistance_tooltip": "Minimum distance a zombie spawn point must be from every player (not just the one receiving the horde) for it to be allowed to spawn there",
+
     "Sandbox_RandomHordes_RareZombies": "Rare Zombies List",
     "Sandbox_RandomHordes_RareZombies_tooltip": "A list of rare zombies that will spawn in the horde",
 

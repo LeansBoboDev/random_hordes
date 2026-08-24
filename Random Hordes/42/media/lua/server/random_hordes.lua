@@ -17,6 +17,29 @@ for item in rareZombiesListStr:gmatch("[^/]+") do
 	table.insert(rareZombiesList, item);
 end
 
+local function IsTooCloseToAnyPlayer(zLocationX, zLocationY)
+	local minDistance = getSandboxOptions():getOptionByName("RandomHordes.MinimumPlayerDistance"):getValue();
+
+	if RandomHordeIsSinglePlayer then
+		for i = 0, getNumActivePlayers() - 1 do
+			local otherPlayer = getSpecificPlayer(i);
+			if otherPlayer and (math.abs(otherPlayer:getX() - zLocationX) + math.abs(otherPlayer:getY() - zLocationY)) < minDistance then
+				return true;
+			end
+		end
+	else
+		local onlinePlayers = getOnlinePlayers();
+		for i = 0, onlinePlayers:size() - 1 do
+			local otherPlayer = onlinePlayers:get(i);
+			if (math.abs(otherPlayer:getX() - zLocationX) + math.abs(otherPlayer:getY() - zLocationY)) < minDistance then
+				return true;
+			end
+		end
+	end
+
+	return false;
+end
+
 local function SpawnZombieToPlayer(player)
 	local square = player:getCurrentSquare();
 	local zLocationX = 0;
@@ -72,6 +95,14 @@ local function SpawnZombieToPlayer(player)
 			if debug then
 				DebugPrintRandomHorde(player:getUsername() ..
 					" cannot spawn zombie in X:" .. zLocationX .. " Y: " .. zLocationY .. ", is not outside");
+			end
+			canSpawn = false;
+		end
+
+		if canSpawn and IsTooCloseToAnyPlayer(zLocationX, zLocationY) then
+			if debug then
+				DebugPrintRandomHorde(player:getUsername() ..
+					" cannot spawn zombie in X:" .. zLocationX .. " Y: " .. zLocationY .. ", too close to a player");
 			end
 			canSpawn = false;
 		end
